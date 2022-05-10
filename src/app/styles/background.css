@@ -1,0 +1,7 @@
+.background {
+  @apply hidden h-full bg-cover md:flex md:items-center md:justify-center;
+}
+
+.background__image {
+  @apply w-[90%];
+}
