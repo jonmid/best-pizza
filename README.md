@@ -2,7 +2,7 @@
 
 Desarrollo Frontend para crear App BestPizza
 
-# 🚀 Tecnologías y Bibliotecas 🚀
+## 🤖 Tecnologías y Bibliotecas
 
 - ReactJS (18.0.0)
 - ViteJS (2.9.7)
