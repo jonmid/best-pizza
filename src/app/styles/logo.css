@@ -1,0 +1,3 @@
+.logo-yellow-black {
+  @apply w-3/5 mb-8 max-w-[200px] duration-300 lg:max-w-none;
+}
