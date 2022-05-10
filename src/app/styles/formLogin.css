@@ -1,0 +1,19 @@
+.form {
+  @apply flex flex-col w-full;
+}
+
+.form__input {
+  @apply flex items-center space-x-2 border mb-4 px-4 py-5 bg-app-white border-app-gray-black rounded-md;
+}
+
+.form__input input {
+  @apply flex-1 text-base text-app-gray-light placeholder-app-gray-light appearance-none focus:outline-none;
+}
+
+.form__input img {
+  @apply h-7 w-7;
+}
+
+.form__span {
+  @apply mb-4 text-lg text-center font-medium text-app-black cursor-pointer duration-300 hover:underline sm:mt-8 sm:mb-12;
+}
