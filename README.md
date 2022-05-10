@@ -26,6 +26,12 @@ npm run dev
 
 Abrir el proyecto en la URL: [http://localhost:3000/](http://localhost:3000/ 'Link')
 
+## 🔖 Resultado Final
+
+Link Live example [https://best-pizza-jonmid.vercel.app/](https://best-pizza-jonmid.vercel.app/)
+
+![](/screenshot.png?raw=true 'Screenshot')
+
 ## 🧑🏻 Author
 
 **Jhonatan Mideros**
