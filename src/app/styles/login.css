@@ -1,0 +1,15 @@
+.login {
+  @apply flex items-center justify-center bg-[url('../../assets/images/imagebkg.png')] bg-no-repeat bg-cover h-full duration-300 md:bg-none;
+}
+
+.login__section {
+  @apply flex flex-col items-center w-full mx-4 px-4 pt-10 pb-5 max-w-xl bg-app-white rounded-lg shadow-2xl duration-300 sm:px-8 sm:mx-16 md:shadow-none md:mx-0;
+}
+
+.login__section--title {
+  @apply mb-4 text-3xl font-medium text-app-black duration-300 sm:text-4xl lg:text-5xl;
+}
+
+.login__section--subtitle {
+  @apply mb-10 text-lg text-center font-normal text-app-gray-light duration-300 sm:text-xl;
+}
