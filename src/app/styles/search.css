@@ -1,0 +1,7 @@
+.search {
+  @apply flex items-center space-x-4;
+}
+
+.search__input {
+  @apply w-full py-4 pl-6 pr-8 text-base tracking-[0.65px] text-gray-500 placeholder-gray-500 bg-gray-200 rounded-md border-transparent appearance-none focus:outline-none;
+}
