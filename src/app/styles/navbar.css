@@ -1,0 +1,11 @@
+.navbar {
+  @apply bg-app-white;
+}
+
+.navbar__list {
+  @apply flex items-center justify-between duration-300 sm:justify-start sm:space-x-8;
+}
+
+.navbar__list--item {
+  @apply text-base font-medium text-app-gray-light cursor-pointer hover:underline hover:underline-offset-4 hover:decoration-app-primary hover:decoration-4;
+}
