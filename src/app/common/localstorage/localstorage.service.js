@@ -38,3 +38,9 @@ export const SaveUserStoreLocalStorage = (user, stores) => {
   localStorage.setItem(NAME_LOCALSTORAGE_USER, user)
   localStorage.setItem(NAME_LOCALSTORAGE_STORES, stores)
 }
+
+export const ClearLocalStorage = () => {
+  localStorage.removeItem(NAME_LOCALSTORAGE_USER)
+  localStorage.removeItem(NAME_LOCALSTORAGE_STORES)
+  localStorage.removeItem(NAME_LOCALSTORAGE_BOOKMARKS)
+}
