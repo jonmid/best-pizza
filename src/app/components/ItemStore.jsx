@@ -1,13 +1,28 @@
 import React from 'react'
 
 import './../styles/itemStore.css'
+import PanosPizza from './../../assets/images/stores/panos_pizza.png'
+import SbarroPizza from './../../assets/images/stores/sbarro_pizza.png'
+import CamionPizza from './../../assets/images/stores/camion_pizza.png'
+import VogliaPizza from './../../assets/images/stores/voglia_pizza.png'
+import StrollerPizza from './../../assets/images/stores/stroller_pizza.png'
+import TrulliPizza from './../../assets/images/stores/trulli_pizza.png'
 
-const ItemStore = () => {
+const ItemStore = ({ store }) => {
+  const images = {
+    'Pizzeria Capitan America': PanosPizza,
+    'Pizzeria Iron Man': SbarroPizza,
+    'Pizzeria Thor': CamionPizza,
+    'Pizzeria Black Widow': VogliaPizza,
+    'Pizzeria Spider Man': StrollerPizza
+  }
   return (
     <li className='item-store'>
-      <img className='item-store__img' src='https://via.placeholder.com/150' alt='tienda' />
-      <h2 className='item-store__name'>Pizzeria Camion</h2>
-      <span className='item-store__address'>Calle 94 # 9 - 76</span>
+      <div className='item-store--shadow'>
+        <img className='item-store__img' src={images[store.name]} alt={store.name} />
+      </div>
+      <h2 className='item-store__name'>{store.name}</h2>
+      <span className='item-store__address'>{store.address}</span>
     </li>
   )
 }

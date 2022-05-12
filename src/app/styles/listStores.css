@@ -1,5 +1,5 @@
 .listStores {
-  @apply flex-1 mt-12 overflow-auto;
+  @apply flex-1 mt-12 py-4 overflow-auto;
 }
 
 .listStores__ul {

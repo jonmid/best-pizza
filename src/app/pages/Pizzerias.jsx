@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import './../styles/pizzerias.css'
 import { TitlePage } from '../components/TitlePage'
@@ -7,6 +8,8 @@ import { ListStores } from '../components/ListStores'
 import { ItemStore } from '../components/ItemStore'
 
 const Pizzerias = () => {
+  const { stores } = useSelector(state => state.storeReducer)
+
   return (
     <>
       <TitlePage title='Tiendas' subtitle='Escoge tu pizzería favorita' />
@@ -16,11 +19,9 @@ const Pizzerias = () => {
       </section>
 
       <ListStores>
-        <ItemStore />
-        <ItemStore />
-        <ItemStore />
-        <ItemStore />
-        <ItemStore />
+        {stores.map(item => (
+          <ItemStore key={item.id} store={item} />
+        ))}
       </ListStores>
     </>
   )

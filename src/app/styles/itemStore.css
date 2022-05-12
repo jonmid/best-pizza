@@ -1,9 +1,13 @@
 .item-store {
-  @apply flex flex-col w-full;
+  @apply flex flex-col w-[90%];
+}
+
+.item-store--shadow {
+  @apply cursor-pointer duration-500 hover:shadow-2xl;
 }
 
 .item-store__img {
-  @apply p-2 border rounded-xl overflow-hidden border-app-black;
+  @apply w-full bg-cover;
 }
 
 .item-store__name {
