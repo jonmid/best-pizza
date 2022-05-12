@@ -3,7 +3,11 @@ import React from 'react'
 import './../styles/listStores.css'
 
 const ListStores = ({ children }) => {
-  return <ul className='listStores'>{children}</ul>
+  return (
+    <section className='listStores'>
+      <ul className='listStores__ul'>{children}</ul>
+    </section>
+  )
 }
 
 export { ListStores }

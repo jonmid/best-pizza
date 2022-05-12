@@ -1,3 +1,7 @@
 .listStores {
-  @apply flex-1 flex flex-col space-y-4 mt-12 overflow-auto;
+  @apply flex-1 mt-12 overflow-auto;
+}
+
+.listStores__ul {
+  @apply grid grid-cols-1 gap-6 justify-items-center duration-300 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
 }
