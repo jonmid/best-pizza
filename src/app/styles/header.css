@@ -1,0 +1,15 @@
+.header {
+  @apply flex items-center justify-end space-x-4 py-6 bg-white;
+}
+
+.header__button {
+  @apply flex items-center space-x-1 hover:underline;
+}
+
+.header__button svg {
+  @apply h-6 w-6 text-app-black;
+}
+
+.header__button span {
+  @apply text-base text-app-gray-light;
+}
