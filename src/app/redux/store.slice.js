@@ -1,31 +1,40 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
+import { ValidateLocalStorage, SaveUserStoreLocalStorage } from '../common/localstorage/localstorage.service'
 import { StoreApi } from './../common/api/store.api'
 
 // Initial localstorage
-const NAME_LOCALSTORAGE = 'BOOKMARKS_STORE'
-const localStorageStores = localStorage.getItem(NAME_LOCALSTORAGE)
-let parsedBookmarks
+const localStorageInitial = ValidateLocalStorage()
 
-if (!localStorageStores) {
-  localStorage.setItem(NAME_LOCALSTORAGE, JSON.stringify([]))
-  parsedBookmarks = []
-} else {
-  parsedBookmarks = JSON.parse(localStorageStores)
-}
+// Initial funtion to get stores
+export const fetchAsyncStores = createAsyncThunk('stores/fetchAsyncStores', async (data, { rejectWithValue }) => {
+  const { user: name, password } = data
 
-export const fetchAsyncStores = createAsyncThunk('stores/fetchAsyncStores', async term => {
-  const response = await StoreApi.get()
-  return response.data
+  try {
+    const response = await StoreApi.get()
+
+    if (response.status === 200) {
+      const findUser = response.data.response.users.find(item => item.email === name && item.password === password)
+
+      if (findUser !== undefined) {
+        return { user: findUser, stores: response.data.response.stores }
+      } else {
+        return rejectWithValue('Usuario o contraseña incorrectos')
+      }
+    }
+  } catch (err) {
+    return rejectWithValue(err.message)
+  }
 })
 
 // Initial state for Redux store
 const initialState = {
-  isAuthenticated: false,
-  user: {},
-  stores: [],
+  isAuthenticated: Object.keys(localStorageInitial.user).length !== 0,
+  user: localStorageInitial.user,
+  stores: localStorageInitial.stores,
   isLoading: false,
-  bookmarks: parsedBookmarks
+  error: null,
+  bookmarks: localStorageInitial.bookmarks
 }
 
 // Create Redux state slice
@@ -38,15 +47,15 @@ const storeSlice = createSlice({
       if (!state.bookmarks.find(bookmark => bookmark.id === action.payload.id)) {
         state.bookmarks = [...state.bookmarks, action.payload]
 
-        const stringifiedStore = JSON.stringify(state.bookmarks)
-        localStorage.setItem(NAME_LOCALSTORAGE, stringifiedStore)
+        // const stringifiedStore = JSON.stringify(state.bookmarks)
+        // localStorage.setItem(NAME_LOCALSTORAGE, stringifiedStore)
       }
     },
     removeBookmark: (state, action) => {
       state.bookmarks = state.bookmarks.filter(item => item.id !== action.payload)
 
-      const stringifiedStore = JSON.stringify(state.bookmarks)
-      localStorage.setItem(NAME_LOCALSTORAGE, stringifiedStore)
+      // const stringifiedStore = JSON.stringify(state.bookmarks)
+      // localStorage.setItem(NAME_LOCALSTORAGE, stringifiedStore)
     },
     changeAuthenticated: (state, action) => {
       state.isAuthenticated = !state.isAuthenticated
@@ -55,15 +64,16 @@ const storeSlice = createSlice({
   extraReducers: {
     [fetchAsyncStores.pending]: state => {
       // console.log('Pending')
-      return { ...state, isLoading: true }
+      return { ...state, isLoading: true, error: null }
     },
     [fetchAsyncStores.fulfilled]: (state, { payload }) => {
       // console.log('Fetched Successfully!')
-      return { ...state, stores: payload.response.stores, isLoading: false }
+      SaveUserStoreLocalStorage(JSON.stringify(payload.user), JSON.stringify(payload.stores))
+      return { ...state, isAuthenticated: true, user: payload.user, stores: payload.stores, isLoading: false, error: null }
     },
-    [fetchAsyncStores.rejected]: state => {
+    [fetchAsyncStores.rejected]: (state, { payload }) => {
       // console.log('Rejected!')
-      return { ...state, isLoading: false }
+      return { ...state, isLoading: false, error: payload }
     }
   }
 })
