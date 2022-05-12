@@ -1,0 +1,15 @@
+.item-store {
+  @apply flex flex-col max-w-[200px];
+}
+
+.item-store__img {
+  @apply p-2 border rounded-xl overflow-hidden border-app-black;
+}
+
+.item-store__name {
+  @apply ml-3 mt-3 text-lg font-normal text-app-gray-black;
+}
+
+.item-store__address {
+  @apply ml-3 mt-1 text-xs font-normal text-app-gray-light;
+}
