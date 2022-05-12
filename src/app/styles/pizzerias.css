@@ -1,0 +1,7 @@
+.pizzerias__title {
+  @apply mt-10 mb-2 text-3xl font-medium text-app-black;
+}
+
+.pizzerias__subtitle {
+  @apply text-lg font-light text-app-gray-light;
+}
