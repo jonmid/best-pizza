@@ -7,8 +7,10 @@ Desarrollo Frontend para crear App BestPizza
 - ReactJS (18.0.0)
 - ViteJS (2.9.7)
 - TailwindCSS (3.0.24)
-- React Router
-- Redux
+- React Router (6.3.0)
+- React-Redux (8.0.1)
+- @reduxjs/toolkit (1.8.1)
+- React-Hook-Form (7.31.1)
 
 ## 🛠️ Instalación
 

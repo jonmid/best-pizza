@@ -3,7 +3,11 @@
 }
 
 .form__input {
-  @apply flex items-center space-x-2 border mb-4 px-4 py-5 bg-app-white border-app-gray-black rounded-md;
+  @apply flex items-center space-x-2 border px-4 py-5 bg-app-white border-app-gray-black rounded-md;
+}
+
+.form__input--message {
+  @apply ml-3 mt-1 text-xs font-medium text-red-500;
 }
 
 .form__input input {
