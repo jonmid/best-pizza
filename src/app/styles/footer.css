@@ -1,0 +1,15 @@
+.footer {
+  @apply py-8 px-4 bg-app-black;
+}
+
+.footer__layout {
+  @apply flex items-center justify-between px-[5%] duration-300 sm:px-[10%];
+}
+
+.footer__icons-social {
+  @apply flex items-center space-x-2 text-app-white;
+}
+
+.footer__icons-social svg {
+  @apply w-8 h-8;
+}
