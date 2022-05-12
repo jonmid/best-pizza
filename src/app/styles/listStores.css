@@ -1,0 +1,3 @@
+.listStores {
+  @apply flex-1 flex flex-col space-y-4 mt-12 overflow-auto;
+}
