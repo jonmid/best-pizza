@@ -1,5 +1,5 @@
 .item-store {
-  @apply flex flex-col max-w-[200px];
+  @apply flex flex-col w-full;
 }
 
 .item-store__img {
