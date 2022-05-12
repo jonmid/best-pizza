@@ -1,11 +1,9 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
 import './../styles/home.css'
 import { Header } from '../components/Header'
 import { Navbar } from '../components/Navbar'
-import { Search } from '../components/Search'
-import { ListStores } from '../components/ListStores'
-import { ItemStore } from '../components/ItemStore'
 import { Footer } from '../components/Footer'
 
 const Home = () => {
@@ -15,20 +13,7 @@ const Home = () => {
         <Header />
         <Navbar />
 
-        <h1 className='home__title'>Tiendas</h1>
-        <span className='home__subtitle'>Escoge tu pizzería favorita</span>
-
-        <section className='mt-12'>
-          <Search />
-        </section>
-
-        <ListStores>
-          <ItemStore />
-          <ItemStore />
-          <ItemStore />
-          <ItemStore />
-          <ItemStore />
-        </ListStores>
+        <Outlet />
       </div>
 
       <Footer />

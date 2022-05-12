@@ -5,11 +5,3 @@
 .home__layout {
   @apply flex-1 flex flex-col px-[5%] duration-300 overflow-auto sm:px-[10%];
 }
-
-.home__title {
-  @apply mt-10 mb-2 text-3xl font-medium text-app-black;
-}
-
-.home__subtitle {
-  @apply text-lg font-light text-app-gray-light;
-}
