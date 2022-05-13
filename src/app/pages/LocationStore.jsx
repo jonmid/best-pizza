@@ -8,7 +8,7 @@ const LocationStore = () => {
     <>
       <TitlePage title='Ubicación' subtitle='Mira donde se encuentran nuestras tiendas' />
 
-      <div className='mt-10'>
+      <div className='mt-10 h-full'>
         <MyMapComponent />
       </div>
     </>
