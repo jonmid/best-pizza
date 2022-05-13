@@ -5,3 +5,7 @@
 .logo-white {
   @apply w-12;
 }
+
+.logo-yellow-white {
+  @apply w-36;
+}
