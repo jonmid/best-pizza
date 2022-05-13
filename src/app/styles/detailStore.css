@@ -1,0 +1,27 @@
+.detail-store {
+  @apply relative w-[90%] px-4 py-8 bg-app-white rounded-2xl duration-300 sm:px-8 md:px-12 sm:w-[80%] md:w-[70%] lg:w-[670px];
+}
+
+.detail-store__info {
+  @apply flex flex-col;
+}
+
+.detail-store__title {
+  @apply mb-6 text-xl font-semibold text-app-black;
+}
+
+.detail-store__description {
+  @apply flex items-center space-x-2 text-base font-normal text-app-gray-light;
+}
+
+.detail-store__description svg {
+  @apply h-5 w-5 text-app-primary;
+}
+
+.detail-store__button-close {
+  @apply absolute -top-5 right-5 flex items-center justify-center w-[40px] h-[40px] border text-gray-50 bg-app-primary border-app-gray-black transition ease-in duration-500 rounded-full shadow-lg hover:rotate-[360deg] sm:-top-3 sm:-right-3;
+}
+
+.detail-store__button-close svg {
+  @apply w-5 h-5;
+}
