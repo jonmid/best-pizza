@@ -1,5 +1,5 @@
 .background {
-  @apply hidden h-full bg-cover duration-300 md:flex md:items-center md:justify-center;
+  @apply relative hidden h-full bg-cover duration-300 md:flex md:items-center md:justify-center;
 }
 
 .background__image {
