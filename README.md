@@ -12,6 +12,7 @@ Desarrollo Frontend para crear App BestPizza
 - @reduxjs/toolkit (1.8.1)
 - Axios (0.27.2)
 - React-Hook-Form (7.31.1)
+- @react-google-maps/api (2.10.2)
 
 ## 🛠️ Instalación
 
