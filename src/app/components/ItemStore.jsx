@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 
 import './../styles/itemStore.css'
-import { addBookmark, removeBookmark } from './../redux/store.slice'
+import { addBookmark, removeBookmark, changeOpenModal, selectItemStore } from './../redux/store.slice'
 import PanosPizza from './../../assets/images/stores/panos_pizza.png'
 import SbarroPizza from './../../assets/images/stores/sbarro_pizza.png'
 import CamionPizza from './../../assets/images/stores/camion_pizza.png'
@@ -29,10 +29,15 @@ const ItemStore = ({ store, type }) => {
     dispatch(removeBookmark(store))
   }
 
+  const onClickButtonModal = () => {
+    dispatch(selectItemStore(store))
+    dispatch(changeOpenModal())
+  }
+
   return (
     <li className='item-store'>
       <div className='item-store--shadow'>
-        <img className='item-store__img' src={images[store.name]} alt={store.name} />
+        <img className='item-store__img' src={images[store.name]} alt={store.name} onClick={() => onClickButtonModal()} />
         <ButtonFavorite type={type} eventClick={type === 'add' ? onClickButtonAdd : onClickButtonDelete} />
       </div>
       <h2 className='item-store__name'>{store.name}</h2>
