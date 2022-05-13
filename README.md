@@ -10,6 +10,7 @@ Desarrollo Frontend para crear App BestPizza
 - React Router (6.3.0)
 - React-Redux (8.0.1)
 - @reduxjs/toolkit (1.8.1)
+- Axios (0.27.2)
 - React-Hook-Form (7.31.1)
 
 ## 🛠️ Instalación
