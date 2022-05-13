@@ -1,6 +1,14 @@
 # 🚀 App BestPizza 🚀
 
-Desarrollo Frontend para crear App BestPizza
+La aplicación fue creada con Vite ya que nos permite optimizar el BUILD final de una manera más compacta y eficiente que otras alternativas, también para desarrollo es más rápido ya que vuelve hacer re-render de los componentes modificados y no de toda la app.
+
+En cuestión de framework de CSS se utilizó Tailwind CSS para realizar la maquetación de componentes de una forma más rápida y además porque al realizar BUILD de los estilos lo hace de la mejor manera para que este se optimice para producción.
+
+Para el manejo del estado de la aplicación se utilizó REDUX con el fin de tener en un solo lugar la información que se visualiza en las páginas y así poder manejar los estados de login, modal, favoritos, también para persistir la información de favoritos se utilizó LocalStorage para conservar los datos seleccionados por el usuario.
+
+Para el manejo de rutas se utilizó React Router, para la petición a la API se utilizó Axios, para el slider de imágenes se utilizó Swiper y para mostrar el mapa de Google Maps se utilizó @react-google-maps/api.
+
+Adicionalmente a las pantallas solicitadas en la prueba se creó la pantalla para mostrar el mapa con la ubicación de restaurantes aleatorios para indicar donde se encuentran las tiendas, asi mismo se creó la pantalla para manejar los favoritos de tiendas con la funcionalidad de adicionar a favoritos y eliminar de favoritos.
 
 ## 🤖 Tecnologías y Bibliotecas
 
