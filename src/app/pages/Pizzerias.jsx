@@ -19,7 +19,7 @@ const Pizzerias = () => {
       renderView = (
         <ListStores>
           {filteredStores.map(store => (
-            <ItemStore key={store.id} store={store} />
+            <ItemStore key={store.id} store={store} type='add' />
           ))}
         </ListStores>
       )
@@ -32,7 +32,7 @@ const Pizzerias = () => {
     renderView = (
       <ListStores>
         {stores.map(store => (
-          <ItemStore key={store.id} store={store} />
+          <ItemStore key={store.id} store={store} type='add' />
         ))}
       </ListStores>
     )

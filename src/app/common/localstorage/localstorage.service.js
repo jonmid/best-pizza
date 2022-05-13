@@ -44,3 +44,7 @@ export const ClearLocalStorage = () => {
   localStorage.removeItem(NAME_LOCALSTORAGE_STORES)
   localStorage.removeItem(NAME_LOCALSTORAGE_BOOKMARKS)
 }
+
+export const SaveBookmarkLocalStorage = data => {
+  localStorage.setItem(NAME_LOCALSTORAGE_BOOKMARKS, data)
+}

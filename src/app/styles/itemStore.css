@@ -3,7 +3,7 @@
 }
 
 .item-store--shadow {
-  @apply cursor-pointer duration-500 hover:shadow-2xl;
+  @apply relative cursor-pointer duration-500 hover:shadow-2xl;
 }
 
 .item-store__img {

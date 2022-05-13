@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { ValidateLocalStorage, SaveUserStoreLocalStorage, ClearLocalStorage } from '../common/localstorage/localstorage.service'
+import { ValidateLocalStorage, SaveUserStoreLocalStorage, ClearLocalStorage, SaveBookmarkLocalStorage } from '../common/localstorage/localstorage.service'
 import { StoreApi } from './../common/api/store.api'
 
 // Initial localstorage
@@ -46,16 +46,12 @@ const storeSlice = createSlice({
     addBookmark: (state, action) => {
       if (!state.bookmarks.find(bookmark => bookmark.id === action.payload.id)) {
         state.bookmarks = [...state.bookmarks, action.payload]
-
-        // const stringifiedStore = JSON.stringify(state.bookmarks)
-        // localStorage.setItem(NAME_LOCALSTORAGE, stringifiedStore)
+        SaveBookmarkLocalStorage(JSON.stringify(state.bookmarks))
       }
     },
     removeBookmark: (state, action) => {
-      state.bookmarks = state.bookmarks.filter(item => item.id !== action.payload)
-
-      // const stringifiedStore = JSON.stringify(state.bookmarks)
-      // localStorage.setItem(NAME_LOCALSTORAGE, stringifiedStore)
+      state.bookmarks = state.bookmarks.filter(item => item.id !== action.payload.id)
+      SaveBookmarkLocalStorage(JSON.stringify(state.bookmarks))
     },
     changeAuthenticated: (state, action) => {
       state.isAuthenticated = !state.isAuthenticated

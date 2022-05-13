@@ -1,0 +1,7 @@
+.button-favorite {
+  @apply absolute bottom-3 right-3 flex items-center justify-center w-[30px] h-[30px] border text-gray-50 bg-app-primary border-app-gray-black transition ease-in duration-500 rounded-full hover:rotate-[360deg];
+}
+
+.button-favorite svg {
+  @apply w-5 h-5;
+}
