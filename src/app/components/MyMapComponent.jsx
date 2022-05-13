@@ -8,8 +8,8 @@ const mapContainerStyle = {
 }
 
 const center = {
-  lat: 8.979668595621545,
-  lng: -79.5246392449141
+  lat: 8.99595298238361,
+  lng: -79.52112692660712
 }
 
 const MyMapComponent = () => {
@@ -26,8 +26,8 @@ const MyMapComponent = () => {
       lng: -79.5246392449141
     },
     'Pizzeria Iron Man': {
-      lat: 9.899830036528146,
-      lng: -79.38755280897361
+      lat: 8.980761578971848,
+      lng: -79.52174965509161
     },
     'Pizzeria Thor': {
       lat: 9.025031832471582,
@@ -46,7 +46,7 @@ const MyMapComponent = () => {
   return isLoaded ? (
     <GoogleMap id='marker-example' mapContainerStyle={mapContainerStyle} zoom={12} center={center}>
       {stores.map(item => (
-        <Marker key={item.id} position={positions[item.name]} />
+        <Marker key={item.id} position={positions[item.name]} label={item.name} />
       ))}
     </GoogleMap>
   ) : (
