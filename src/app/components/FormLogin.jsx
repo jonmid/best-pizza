@@ -35,7 +35,8 @@ const FormLogin = () => {
     <form className='form' onSubmit={handleSubmit(onSubmit)}>
       <div className='mb-4'>
         <div className='form__input'>
-          <input id='user' type='email' name='user' placeholder='Usuario' {...register('user', { required: true })} defaultValue='pperez@perez.com' />
+          <input id='user' type='email' name='user' placeholder='Usuario' {...register('user', { required: true })} />
+          {/* <input id='user' type='email' name='user' placeholder='Usuario' {...register('user', { required: true })} defaultValue='pperez@perez.com' /> */}
           <img src={IconUser} alt='icon-user' />
         </div>
         {errors.user && <span className='form__input--message'>Este campo es requerido</span>}
@@ -43,7 +44,8 @@ const FormLogin = () => {
 
       <div className='mb-4'>
         <div className='form__input'>
-          <input id='pass' type='password' name='pass' placeholder='Contraseña' {...register('password', { required: true })} defaultValue='pperezs123' />
+          <input id='pass' type='password' name='pass' placeholder='Contraseña' {...register('password', { required: true })} />
+          {/* <input id='pass' type='password' name='pass' placeholder='Contraseña' {...register('password', { required: true })} defaultValue='pperezs123' /> */}
           <img src={IconPassword} alt='icon-pass' />
         </div>
         {errors.password && <span className='form__input--message'>Este campo es requerido</span>}
